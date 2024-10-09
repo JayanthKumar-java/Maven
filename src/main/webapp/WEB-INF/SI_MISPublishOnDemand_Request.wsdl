@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/ODCorpAccountMISPublish" xmlns:p1="http://bc.arteriatech.com/ODCorpAccountMISPublish" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/ODCorpAccountMISPublish" xmlns="http://bc.arteriatech.com/ODCorpAccountMISPublish" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="MT_MISPublishOnDemand_Request" type="MISPublishOnDemand_Request"/>
+            <xsd:complexType name="MISPublishOnDemand_Request">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">ef433d527ef111ea92db00000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Root">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="AggregatorID" type="xsd:string"/>
+                                <xsd:element minOccurs="0" name="Report" type="xsd:string"/>
+                                <xsd:element minOccurs="0" name="VariantID" type="xsd:string"/>
+                                <xsd:element minOccurs="0" name="Input" type="xsd:string"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_MISPublishOnDemand_Request">
+<wsdl:documentation/>
+    <wsdl:part name="MT_MISPublishOnDemand_Request" element="p1:MT_MISPublishOnDemand_Request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SI_MISPublishOnDemand_Request">
+<wsdl:documentation/>
+    <wsdl:operation name="SI_MISPublishOnDemand_Request">
+<wsdl:documentation/>
+      <wsdl:input message="p1:MT_MISPublishOnDemand_Request">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_MISPublishOnDemand_RequestBinding" type="p1:SI_MISPublishOnDemand_Request">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="SI_MISPublishOnDemand_Request">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_MISPublishOnDemand_RequestService">
+    <wsdl:port name="SI_MISPublishOnDemand_RequestPort" binding="p1:SI_MISPublishOnDemand_RequestBinding">
+      <soap:address location="https://e1044-iflmap.hcisbt.ap1.hana.ondemand.com:443/cxf/MISPublishOnDemand_Request"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                        <wsp:ExactlyOne>
+                                            <sp:HttpBasicAuthentication/>
+                                            <sp:RequireClientCertificate/>
+                                        </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/CurrentAccountInquiry" xmlns:p1="http://bc.arteriatech.com/CurrentAccountInquiry" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/CurrentAccountInquiry" xmlns="http://bc.arteriatech.com/CurrentAccountInquiry" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="CurrentAccountInquiryRequest" type="CurrentAccountInquiryRequest"/>
+            <xsd:element name="CurrentAccountInquiryResponsePortal" type="CurrentAccountInquiryResponsePortal"/>
+            <xsd:complexType name="CurrentAccountInquiryRequest">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">9661d79160f511e993fc00000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Account_No" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CurrentAccountInquiryResponsePortal">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">ce6d1104887311eab79500000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="FreezeStatus" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">96669ce87d1511e991a7d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">96669ce97d1511e9aae6d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ErrorCode" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233724610311e9869354177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ErrorDesc" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233725610311e99c0754177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ErrorSource" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233726610311e99ab754177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ErrorType" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233727610311e9beb154177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CustomerId" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233728610311e9cdf254177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CustomerTitle" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">22233729610311e9a0a854177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CustomerName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2223372a610311e9bcac54177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CustomerShortName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2223372b610311e9ce3d54177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ModeOfOperation" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2223372c610311e99b8054177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="IsAccountClosed" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2223372d610311e9c85454177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="AccountClosedDate" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2223372e610311e9b97954177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="EffectiveBalance" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">57a09c617d1611e98e92d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="SoldID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">57a09c627d1611e9b3cad43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="limitPrefix" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d3e8b0ac887211eac068ecb1d73bd07d</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="limitSuffix" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d3e8b0ad887211eac049ecb1d73bd07d</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ExpiryDate" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CurrentAccountInquiryResponsePortal">
+<wsdl:documentation/>
+    <wsdl:part name="CurrentAccountInquiryResponsePortal" element="p1:CurrentAccountInquiryResponsePortal">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CurrentAccountInquiryRequest">
+<wsdl:documentation/>
+    <wsdl:part name="CurrentAccountInquiryRequest" element="p1:CurrentAccountInquiryRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="currentAccountInquiry">
+<wsdl:documentation/>
+    <wsdl:operation name="currentAccountInquiry">
+<wsdl:documentation/>
+      <wsdl:input message="p1:CurrentAccountInquiryRequest">
+    </wsdl:input>
+      <wsdl:output message="p1:CurrentAccountInquiryResponsePortal">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="currentAccountInquiryBinding" type="p1:currentAccountInquiry">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="currentAccountInquiry">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="currentAccountInquiryService">
+    <wsdl:port name="currentAccountInquiryPort" binding="p1:currentAccountInquiryBinding">
+      <soap:address location="https://l20320-iflmap.hcisbp.eu1.hana.ondemand.com:443/cxf/ARTEC/BC/AccountInquiry"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                        <wsp:ExactlyOne>
+                                            <sp:HttpBasicAuthentication/>
+                                            <sp:RequireClientCertificate/>
+                                        </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

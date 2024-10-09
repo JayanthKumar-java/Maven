@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/SCFAccount" xmlns:p1="http://bc.arteriatech.com/SCFAccount" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/SCFAccount" xmlns="http://bc.arteriatech.com/SCFAccount" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="SCFAccount_Request" type="SCFAccount_Request"/>
+            <xsd:element name="SCFAccount_Response" type="SCFAccount_Response"/>
+            <xsd:complexType name="SCFAccount_Request">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">c395ae8b3ff711e9cd6100000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="DealerAccountNo" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c36fad233ff711e9a2c5ecb1d73bd07d</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="SCFAccount_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">38c047e6af7011e9acdb00000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Statement">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">3a015ed0af7011e9bbc8705a0f35becb</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="FreezeFlag" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ec6af7011e9ccfc705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="DueDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ec7af7011e99491705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ec8af7011e98a8a705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TotalOverdueBeyondCureDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ec9af7011e98809705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TotalOverdueBeyondCureAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ecaaf7011e9ad87705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="IsPrincipalOverdue" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ecbaf7011e9c853705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="InterestOverdueAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015eccaf7011e99b70705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="FeeOverdueAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ecdaf7011e9a0f2705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PrincipalOverdueAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015eceaf7011e9a4bf705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ReportDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ecfaf7011e9b18c705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="SanctionLimit" type="xsd:string"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Status">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">3a015ed4af7011e9baad705a0f35becb</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="Status" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ed1af7011e9b26c705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ResponseCode" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ed2af7011e99c6d705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="Message" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">3a015ed3af7011e9be5b705a0f35becb</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SCFAccount_Response">
+<wsdl:documentation/>
+    <wsdl:part name="SCFAccount_Response" element="p1:SCFAccount_Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SCFAccount_Request">
+<wsdl:documentation/>
+    <wsdl:part name="SCFAccount_Request" element="p1:SCFAccount_Request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SCFAccount">
+<wsdl:documentation/>
+    <wsdl:operation name="SCFAccount">
+<wsdl:documentation/>
+      <wsdl:input message="p1:SCFAccount_Request">
+    </wsdl:input>
+      <wsdl:output message="p1:SCFAccount_Response">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SCFAccountBinding" type="p1:SCFAccount">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="SCFAccount">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCFAccountService">
+    <wsdl:port name="SCFAccountPort" binding="p1:SCFAccountBinding">
+      <soap:address location="https://l20320-iflmap.hcisbp.eu1.hana.ondemand.com:443/cxf/ARTEC/BC/SCFAccount"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                    <wsp:ExactlyOne>
+                                    <sp:HttpBasicAuthentication/>
+                                    <sp:RequireClientCertificate/>
+                                    </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

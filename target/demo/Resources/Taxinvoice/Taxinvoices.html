@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+h3,p{
+    text-align: center;
+}
+*{
+font-family: "Times New Roman", Times, serif;
+
+}
+.container{
+    justify-content: center; 
+    display: block;    
+}
+table,td {
+  border: 1px solid;
+  padding: 5px;
+  border-collapse: collapse;
+  margin-left: 2px;
+  vertical-align:center;
+  font-size: 14px;
+  
+}
+
+#footer {
+            position: relative;
+            padding: 10px 10px 0px 10px;
+            bottom: 2px;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 20px;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        
+        h3,p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container2{
+    justify-content: center;
+    display: flex;
+   position: relative;
+   top: 400px;
+}
+.container3{
+    justify-content: center;
+    display: flex;
+   position: relative;
+   top: 440px;
+}
+.no_border{
+border-bottom: none;
+}
+
+.bootm_align{
+vertical-align:bottom; padding-left: 0px;
+}
+.inner_td{
+border: none;
+vertical-align: top;
+padding-right: 30px;
+
+}
+.declaration{
+position: relative;
+padding-right: 0px;
+border: 1px solid;
+top: 170px;
+height: 200px;
+width: 100%;
+}
+/* @page { size: A4; margin: 10mm 5mm 10mm 5mm; @bottom-center { font-family: Verdana; font-size: 12.0pt; content: "This is a Computer Generated Invoice"; }} */
+   
+   div.pdf-footer {
+            padding-top: 4pt;
+            margin-left:200px;
+            position: running(footer);
+        }
+
+        @page {
+            @bottom-center {
+                content: element(footer, last);
+            }
+        } 
+</style>
+</head>
+<body>
+  
+<h3>Tax Invoice</h3>
+<div class="container"> 
+<table style="width:100%">
+  <tr>
+    <td rowspan="3">
+      <b>[[${NAME1}]]</b><br/>
+        [[${ADDRESS1}]],[[${ADDRESS2}]],[[${ADDRESS3}]],[[${ADDRESS4}]]<br/>
+       [[${CITY_NAME}]] ,State Code :[[${STATEID}]],[[${POSTAL_CODE}]] <br/>
+        Mobile No : [[${MOBILE1}]] </td>
+        
+    <td>Invoice No.<br/>
+        <b>[[${INV_NO}]]</b></td>
+    <td>Dated<br/>
+        <b>[[${INV_DATE}]]</b></td>
+        
+  </tr>
+  <tr>
+    <td><pre>Delivery Note</pre></td>
+    <td><pre>Mode/Terms of Paymen</pre></td>
+  </tr>
+  <tr>
+    <td><pre>Reference No. &amp; Date.</pre></td>
+    <td><pre>Other References</pre></td>
+  </tr>
+  <tr>
+    <td rowspan="3">
+      Consignee (Ship to)<br/>
+       <b> [[${EXT_SOLD_TO_CPNAME}]]</b><br/>
+        [[${SOLD_TO_ADDRESS1}]] [[${SOLD_TO_ADDRESS2}]] [[${SOLD_TO_ADDRESS3}]][[${SOLD_TO_ADDRESS4}]] [[${SOLD_TO_CITY_NAME}]][[${SOLD_TO_STATE}]] [[${SOLD_TO_COUNTRY_NAME}]][[${SOLD_TO_MOB_NO}]]
+      </td>
+    <td>Buyer&apos;s Order No.</td>
+    <td>Dated</td>
+  </tr>
+
+  <tr>
+    <td>Dispatch Doc No.</td>
+    <td>Delivery Note Date</td>
+  </tr>
+  <tr>
+    <td>Dispatched through</td>
+    <td>Destination</td>
+  </tr>
+  <tr>
+    <td >Buyer (Bill to)<br/>
+        <b>[[${EXT_SOLD_TO_CPNAME}]]</b><br/>
+        [[${SOLD_TO_ADDRESS1}]] [[${SOLD_TO_ADDRESS2}]] [[${SOLD_TO_ADDRESS3}]][[${SOLD_TO_ADDRESS4}]] [[${SOLD_TO_CITY_NAME}]][[${SOLD_TO_STATE}]][[${SOLD_TO_COUNTRY_NAME}]] [[${CountryName}]][[${SOLD_TO_MOB_NO}]]
+        </td>
+    <td colspan="2">Terms of Delivery</td>
+  </tr>
+</table>
+</div>
+<div class="container">
+<table style="width:100%;margin-right: 0px;">
+  <tr style="padding: 5px;">
+    <td>Sl No.</td>
+    <td>Description of Goods</td>
+    <td>HSN/SAC</td>
+    <td>Quantity</td>
+    <td>UOM</td>
+    <td>Rate</td>
+    <td>per</td>
+    <td>Disc. %</td>
+    <td>Disc. Amt</td>
+    <td>Amount</td>
+  </tr>
+  <tr th:each="invItem:${invItems}">
+    <td th:text= "${invItem.slNo}" style="text-align: right;"></td>
+    <td><span th:text= "${invItem.materialDesc}"></span> :<span th:text="${invItem.materialNo}"></span><br/>
+        Batch : <span th:text="${invItem.batch}"></span><br/>
+        Expiry : <span th:text="${invItem.expiryDate}"></span></td>
+    <td><span th:text= "${invItem.hsnCode}"></span></td>
+    <td style="text-align: right;padding-right: 5px;"><span th:text= "${invItem.invQty}"></span></td>
+    <td><span th:text= "${invItem.uom}"></span></td>
+    <td style="text-align: right;"><span th:text= "${invItem.itemBasicValue}"></span></td>
+    <td><span th:text= "${invItem.per}"></span></td>
+    <td style="text-align: right;"><span th:text= "${invItem.discountPer}"></span></td>
+    <td style="text-align: right;"><span th:text= "${invItem.discountI}"></span></td>
+    <td style="text-align: right;padding: 0px;"><span th:text= "${invItem.itemTaxableValue}"></span></td>
+  </tr> 
+   <tr>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right"><b><br/>CGST<br/>SGST</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align: right;"><br/>[[${CGST}]]<br/>[[${SGST}]]</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;"></td>
+    <td><b><br/>ROUND OFF//-</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+     <td></td>
+    <td style="text-align: right;"><b>[[${RoundOffValue}]]</b></td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Total</td>
+      <td></td>
+      <td style="text-align: right;"><b> [[${TotalInvQty}]]</b></td>
+      <td><b> [[${UOMUnits}]]</b></td>
+      <td></td>
+      <td></td>
+       <td></td>
+         <td></td>
+      <td style="font-family: Verdana, Arial, sans-serif;width: 50px;text-align: right;">&#x20B9;[[${TotalAmount}]]</td>
+    </tr>
+    <tr>
+    <td colspan="10">Amount Chargeable (in words)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  E. &amp; O.E <br/>
+   <b>[[${TotalAmtInWord}]] only</b></td>
+  </tr>
+</table>
+</div>
+
+<!-- <p id="footer">This is a Computer Generated Invoice</p> -->
+
+<!-- <h3 style="position: relative;top: 388px;">Tax Invoice(Page 2)</h3>
+<div class="container2">
+<table style="width:100%">
+<tr>
+    <td rowspan="3"><b>CHEMIPLAST</b><br/>
+      XXV/835/3,MACHINGAL LANE,THRISSUR -1<br/>
+       GSTIN/UIN: 32AABFC5350L1ZO<br/>
+      State Name : Kerala, Code : 32<br/>
+      E-Mail : surg.chemiplast@gmail.com</td>
+        
+    <td>Invoice No.<br/><b>47658</b></td>
+    <td>Dated<br/><b>21-Mar-22</b></td>
+        
+  </tr>
+  <tr>
+    <td>Delivery Note</td>
+    <td>Mode/Terms of Paymen</td>
+  </tr>
+  <tr>
+    <td>Reference No. &amp; Date.</td>
+    <td>Other References</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Consignee (Ship to)<br/>
+     <b> AASWAASAM MEDICALS</b><br/>
+      PADOOR CENTER 9048080153<br/> 
+      State Name : Kerala, Code : 32</td>
+    <td>Buyer’s Order No.</td>
+    <td>Dated </td>
+  </tr>
+
+  <tr>
+    <td>Dispatch Doc No.</td>
+    <td>Delivery Note Date</td>
+  </tr>
+  <tr>
+    <td>Dispatched through</td>
+    <td>Destination</td>
+  </tr>
+  <tr>
+    <td>Buyer (Bill to)<br/>
+    <b>  AASWAASAM MEDICALS</b><br/>
+      PADOOR CENTER 9048080153 <br/>
+      State Name : Kerala, Code : 32</td>
+    <td colspan="2" style="height: 180px;">Terms of Delivery<br/>
+    EXample India<br/>
+No reviews · Business management consultant<br/>
+Abhijith Annexe, ASTHIKA SAMAJ, 100/3,8th Ma, 11th Cross Rd · 8559744<br/>
+    </td>
+  </tr>
+</table>
+</div> -->
+<!-- <h3 style="position: relative;top: 435px;">Tax Invoice(Page 3)</h3>
+<div class="container3">
+<table style="width:100%">
+  <tr>
+    <td rowspan="3"><b>CHEMIPLAST</b>
+      XXV/835/3,MACHINGAL LANE,THRISSUR -1
+       GSTIN/UIN: 32AABFC5350L1ZO
+      State Name : Kerala, Code : 32
+      E-Mail : surg.chemiplast@gmail.com</td>
+        
+    <td>Invoice No.<br/><b>47658</b></td>
+    <td>Dated<br/><b>21-Mar-22</b></td>
+        
+  </tr>
+  <tr>
+    <td><pre>Delivery Note</pre></td>
+    <td><pre>Mode/Terms of Paymen</pre></td>
+  </tr>
+  <tr>
+    <td><pre>Reference No. &amp; Date.</pre></td>
+    <td><pre>Other References</pre></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Consignee (Ship to)
+     <b> AASWAASAM MEDICALS</b>
+      PADOOR CENTER 9048080153 
+      State Name : Kerala, Code : 32</td>
+    <td>Buyer’s Order No.</td>
+    <td>Dated</td>
+  </tr>
+
+  <tr>
+    <td>Dispatch Doc No.</td>
+    <td>Delivery Note Date</td>
+  </tr>
+  <tr>
+    <td>Dispatched through</td>
+    <td>Destination</td>
+  </tr>
+  <tr>
+    <td >Buyer (Bill to)
+    <b>  AASWAASAM MEDICALS</b>
+      PADOOR CENTER 9048080153 
+      State Name : Kerala, Code : 32</td>
+    <td colspan="2" style="height: 100px;">Terms of Delivery</td>
+  </tr>
+</table>
+</div> -->
+<!-- <table style="width:100%">
+  <tr>
+    <td style="width: 10px;">Sl No.</td>
+    <td>Description of Goods</td>
+    <td>HSN/SAC</td>
+    <td>Quantity</td>
+    <td>Rate</td>
+    <td>per</td>
+    <td>Disc. %</td>
+    <td>Amount</td>
+  </tr>
+  
+</table> -->
+
+<div class="container" style="padding-top: 20px;">
+  <table style="width:100%;" >
+<tr>
+  <td rowspan="2">HSN/SAC</td>
+  <td rowspan="2">Taxable  Value</td>
+  <td colspan="2">Central Tax</td>
+  
+  <td colspan="2">State Tax</td>
+ 
+  <td rowspan="2"> Total Tax Amount</td>
+
+</tr>
+<tr>
+  <td>Rate</td>
+  
+  <td>Amount</td>
+ 
+  <td >Rate</td>
+  
+  <td>Amount</td>
+  
+
+</tr>
+ <tr th:each="entry, stats : ${hsnGroup}" th:with="invItem=${entry.value}">
+ <td th:text= "${entry.key}"></td>
+  <td th:text= "${invItem.assValue}" style="text-align: right;"></td>
+  <td></td>
+  <td th:text= "${invItem.cgstAmt}" style="text-align: right;"> </td>
+  <td></td>
+  <td th:text= "${invItem.sgstAmt}" style="text-align: right;"></td>
+  <td th:text="${invItem.itemTaxValue}" style="text-align: right;"></td>
+ </tr>
+<!-- <tr th:each="invItem:${invItems}">
+  <td th:text= "${invItem.hsnCode}" ></td>
+  <td th:text= "${invItem.assValue}" style="text-align: right;"></td>
+  <td></td>
+  <td th:text= "${invItem.cgstAmt}" style="text-align: right;"> </td>
+  <td></td>
+  <td th:text= "${invItem.sgstAmt}" style="text-align: right;"></td>
+  <td th:text="${invItem.itemTaxValue}" style="text-align: right;"></td>
+</tr> -->
+<tr>
+  <td><b>Total</b></td>
+  <td style="text-align: right;"><b>[[${TotalAssValue}]]</b></td>
+  <td></td>
+  <td style="text-align: right;"><b>[[${TotalCGST}]]</b></td>
+  <td></td>
+  <td style="text-align: right;"><b>[[${TotalSGST}]]</b></td>
+  <td style="text-align: right;"><b>[[${TotalItemTaxValue}]]</b></td>
+</tr>
+<tr style="padding: 10px;height: 25px;" height="30px">
+<td colspan="7" style="padding: 5px;height: 35px;" rowspan="3">Tax Amount (in words) :&nbsp;&nbsp;&nbsp;<b>[[${TotalItemTaxAmtInWord}]] only</b></td>
+</tr>
+</table>
+</div>
+<div class="declaration">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div style="position: relative; float: right;height: 112px;width: 300px;border-left: 1px solid;border-top: 1px solid;">
+<b style="float: right;margin-right: 20px;top: 30px;">for [[${NAME1}]]</b><br/>
+<br/>
+<br/>
+<br/>
+<p style="font-size: 13px;">Prepared by &nbsp;&nbsp; &nbsp;&nbsp;Verified by &nbsp;&nbsp;&nbsp;&nbsp;Authorised Signatory</p>
+</div>
+<p style="display: inline;padding-left: 5px;padding-top: 10px;">
+<span>Company&apos;s PAN : <b></b></span><br/><br/>
+
+<u style="padding-left: 5px;">Declaration</u><br/>
+
+<span style="width: 300px;padding-left: 5px;padding-top: 1px;">
+ We declare that this invoice shows the actual price of<br/>
+ <span style="padding-left: 5px;">he goods described and that all particulars are</span><br/>
+<span style="padding-left: 5px;"> true and correct.</span>
+</span>
+
+</p>
+  
+</div>
+
+
+<!-- <p style="position: relative;width: 100%;height: 200px;top: 500px;">This is a Computer Generated Invoice</p> -->
+<div class="pdf-footer">This is a Computer Generated Invoice</div>
+</body>
+</html>
+

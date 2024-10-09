@@ -1,0 +1,31 @@
+_schema-version: '3.1'
+ID: cf-java-servlet-app
+version: 0.0.1
+
+modules:
+  - name: java-spring
+    type: java
+    path: .
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    provides:
+      - name: java-spring-api
+        properties:
+          url: ${default-url}
+    properties:
+      default-url: ${default-url}
+    build-parameters:
+      builder: maven
+      build-result: 'target/*.war'
+      supported-platforms: [cf]
+    requires:
+      - name: java-spring-dest
+ 
+resources:
+  - name: java-spring-dest
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
+    type: org.cloudfoundry.managed-service
+ 

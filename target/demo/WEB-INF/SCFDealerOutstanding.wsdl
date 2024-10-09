@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/SCFDealerOutstanding" xmlns:p1="http://bc.arteriatech.com/SCFDealerOutstanding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/SCFDealerOutstanding" xmlns="http://bc.arteriatech.com/SCFDealerOutstanding" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="SCFDealerOutstanding_Request" type="SCFDealerOutstanding_Request"/>
+            <xsd:element name="SCFDealerOutstanding_Response" type="SCFDealerOutstanding_Response"/>
+            <xsd:complexType name="SCFDealerOutstanding_Request">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">e942583f153611e8c28000000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="DealerODAccountNo" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="SCFDealerOutstanding_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">df2669958a8b11e8ba7500000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Header">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd59154111e8ac2c705a0f18f242</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="CorporateName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd49154111e88154705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="DealerName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4a154111e8bfe9705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="CustomerId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4b154111e89448705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="SanctionLimit" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4c154111e8a18d705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="SanctionLimitCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4d154111e8af83705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TenorInDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4e154111e8b7e7705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PeakLimit" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd4f154111e89f99705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PeakLimitCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd50154111e8a98a705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PeakLimitTenorInDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd51154111e89448705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OutstandingAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd52154111e8cdff705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OutstandingAmountCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd53154111e8c998705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueBeyondCure" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd54154111e8977a705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueBeyondCureCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd55154111e8b693705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="AvailableLimit" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd56154111e8b649705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="AvailableLimitCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd57154111e88ce4705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="AsOnDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd58154111e8887b705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="IsDealerBlocked" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">c54fd74b8a8b11e88c48705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="BlockingReasonId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">c54fd74c8a8b11e880e7705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="BlockingReasonDesc" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">c54fd74d8a8b11e8bc88705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Detail">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f9154111e88ee2705a0f18f242</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="TxnCategoryId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd5a154111e8b774705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TxnCategoryDescription" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd5b154111e8a5d3705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TransactionId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3dfd5c154111e89782705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TransactionDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09ef154111e89eb6705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="TransactionAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f0154111e8b978705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OutstandingAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f1154111e8adab705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="DueDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f2154111e8c68e705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueWithinCureAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f3154111e8b068705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueWithinCureCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f4154111e89199705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueWithinCureDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f5154111e8947b705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueBeyondCureAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f6154111e8c226705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueBeyondCureCurrency" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f7154111e8a269705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OverdueBeyondCureDays" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09f8154111e8ce4d705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="IsOverdue" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">c54ff9f58a8b11e8a939705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="OrderBlocked" type="xsd:string"/>
+                                <xsd:element minOccurs="0" name="PaymentBlocked" type="xsd:string"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Status">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09fd154111e8ac6b705a0f18f242</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="Status" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09fa154111e8afa3705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ResponseCode" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09fb154111e89225705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="Message" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">2f3e09fc154111e885f4705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SCFDealerOutstanding_Request">
+<wsdl:documentation/>
+    <wsdl:part name="SCFDealerOutstanding_Request" element="p1:SCFDealerOutstanding_Request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SCFDealerOutstanding_Response">
+<wsdl:documentation/>
+    <wsdl:part name="SCFDealerOutstanding_Response" element="p1:SCFDealerOutstanding_Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SCFDealerOutstanding">
+<wsdl:documentation/>
+    <wsdl:operation name="SCFDealerOutstanding">
+<wsdl:documentation/>
+      <wsdl:input message="p1:SCFDealerOutstanding_Request">
+    </wsdl:input>
+      <wsdl:output message="p1:SCFDealerOutstanding_Response">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SCFDealerOutstandingBinding" type="p1:SCFDealerOutstanding">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="SCFDealerOutstanding">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCFDealerOutstandingService">
+    <wsdl:port name="SCFDealerOutstandingPort" binding="p1:SCFDealerOutstandingBinding">
+      <soap:address location="https://l20321-iflmap.hcisbp.eu1.hana.ondemand.com:443/cxf/ARTEC/BC/SCFDealerOutstanding"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                    <wsp:ExactlyOne>
+                                    <sp:HttpBasicAuthentication/>
+                                    <sp:RequireClientCertificate/>
+                                    </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

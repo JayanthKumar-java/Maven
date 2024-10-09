@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/eSignContractCALPartnership" xmlns:p1="http://bc.arteriatech.com/eSignContractCALPartnership" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/eSignContractCALPartnership" xmlns="http://bc.arteriatech.com/eSignContractCALPartnership" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="eSignContractCALPartnership_Response" type="eSignContractCALPartnership_Response"/>
+            <xsd:element name="eSignContractCALPartnership_Request" type="eSignContractCALPartnership_Request"/>
+            <xsd:complexType name="eSignContractCALPartnership_Request">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">00fe0361730211e9956400000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="TemplateVariables">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">61492f2f291211e89909d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="DealerName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">6148f7ee291211e8c39ed43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartnerNameList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e3285a11e8855f54093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartnerName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a41702291311e891b9d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="DateOfBirthList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e4285a11e8b5b654093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="DateOfBirth" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a41703291311e8c452d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="MobileNumberList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e5285a11e89b9054093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="MobileNumber" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a41704291311e891edd43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="EmailAddressList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e6285a11e889b354093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="EmailAddress" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a41705291311e89fa1d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="AadharNumberList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e7285a11e8bd4754093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="AadhaarNumber" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a44107291311e8c4c5d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="PANList">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e8285a11e8bf2354093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PAN" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">43a44108291311e8ce4ed43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="Constitution" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646e9285a11e8a34554093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="CorporateName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646ea285a11e8b0cf54093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="FacilityAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646eb285a11e8c82b54093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="InterestRate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f26291211e8c15ed43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="SpreadRate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f27291211e88de7d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PaymentTenor" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f28291211e88469d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ExtraSpread" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f29291211e887f2d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ExtraTenorPayment" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f2a291211e8a69bd43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="DefaultSpread" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">ec61add929b111e882abd43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PFAmount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f2b291211e8a7e4d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ExpiryDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f2c291211e8bdf5d43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ApplicationId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">61492f2d291211e8a1fcd43d7ea83aad</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="IPAddress" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646ec285a11e8937054093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="CurrentDate" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646ed285a11e8c47454093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="CurrentTime" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646ee285a11e8cf2854093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="PartnerAccount" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646ef285a11e8a7d554093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="DateOfIncorporation" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">58a646f0285a11e8924454093138c307</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="TestRun">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d3a823cd730111e9814954177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:length value="1"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Request">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d3a823d4730111e9838f54177dcf1903</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="AggregatorId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823ce730111e988af54177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="SIgnerDetail">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823d3730111e9b15f54177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="SignerName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823cf730111e995a354177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element minOccurs="0" name="SignerEmailId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823d0730111e986d954177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element minOccurs="0" name="SignOrder" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823d1730111e98ede54177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element minOccurs="0" name="AadharNumber" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">d3a823d2730111e9c1d454177dcf1903</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CPType" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="eSignContractCALPartnership_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">cf3bc677811711e88b5e00000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="Response">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b3d180f972c411e897e4d43d7ea83ab5</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element minOccurs="0" name="CustomerId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">b3d180f572c411e8be08d43d7ea83ab5</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element minOccurs="0" name="ContractId" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">c2913e25811711e8b082705a0f18f242</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" name="SignerDetail">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">b3d180f872c411e8b472d43d7ea83ab5</xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="SignerName" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">b3d180f672c411e8cbe8d43d7ea83ab5</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element minOccurs="0" name="SignOrder" type="xsd:string">
+                                    <xsd:annotation>
+                                    <xsd:appinfo source="http://sap.com/xi/TextID">b3d180f772c411e8c2add43d7ea83ab5</xsd:appinfo>
+                                    </xsd:annotation>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="FinalTemplate" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">9f7cf4ff72c411e891a6d43d7ea83ab5</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">9f7cf50072c411e892e2d43d7ea83ab5</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ResponseCode" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">9f7cf50172c411e8a211d43d7ea83ab5</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Message" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">9f7cf50272c411e897dad43d7ea83ab5</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="eSignContractCALPartnership_Request">
+<wsdl:documentation/>
+    <wsdl:part name="eSignContractCALPartnership_Request" element="p1:eSignContractCALPartnership_Request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eSignContractCALPartnership_Response">
+<wsdl:documentation/>
+    <wsdl:part name="eSignContractCALPartnership_Response" element="p1:eSignContractCALPartnership_Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="eSignContractCALPartnership">
+<wsdl:documentation/>
+    <wsdl:operation name="eSignContractCALPartnership">
+<wsdl:documentation/>
+      <wsdl:input message="p1:eSignContractCALPartnership_Request">
+    </wsdl:input>
+      <wsdl:output message="p1:eSignContractCALPartnership_Response">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eSignContractCALPartnershipBinding" type="p1:eSignContractCALPartnership">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="eSignContractCALPartnership">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eSignContractCALPartnershipService">
+    <wsdl:port name="eSignContractCALPartnershipPort" binding="p1:eSignContractCALPartnershipBinding">
+      <soap:address location="https://l20320-iflmap.hcisbp.eu1.hana.ondemand.com:443/cxf/ARTEC/BC/eSignContractCALPartnership"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                    <wsp:ExactlyOne>
+                                    <sp:HttpBasicAuthentication/>
+                                    <sp:RequireClientCertificate/>
+                                    </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

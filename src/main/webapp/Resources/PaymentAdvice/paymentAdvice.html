@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+html{
+margin-left: 5px;
+margin-right: 3px;
+}
+	*{
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+
+	}
+	
+	#frontElement{
+		font-size: 20px;
+		margin-top: 50px;
+		margin-left: 200px;
+	}
+
+	.noi{
+		padding-left: 300px;
+		padding-top: 20px;
+	}
+
+	.payment-advice{
+		padding-left: 250px;
+		padding-top: 20px;
+	}
+
+	.box-model{
+		border-bottom: 2px solid block;
+		border-top: 2px solid block;
+		border-color:block;
+		/* background-color: gray; */
+		background-color:#D3D3D3;
+		width: 100%;
+		padding: 7px;
+		margin-top: 10px;
+		border: 5px solid block;
+
+	}
+.box-model span{
+	padding-left: 20px;
+
+}
+body{
+	margin-left: 5px;
+	margin-right: 3px;
+	font-size: 12.5px;
+	
+}
+.left-box{
+	float:left; 
+    width:300px;
+    height:130px;
+
+}
+.right-box{
+	float:left; 
+      padding-left: 80px;
+     margin-left:40px;
+     padding-right:0px;
+     width:350px;
+     height:130px;
+}
+.main-div{
+	display: inline-block;
+	padding-top: 20px;
+}
+
+.paragraph{
+	padding-top: 15px;
+	height: 60px;
+	width:100%;
+	position:relative;
+
+}
+table{
+border-width: 1px solid block;
+text-align: cenetr;
+padding-top: 20px;
+
+}
+td,th{
+text-align: cenetr;
+}
+
+.table-div{
+	padding-top: 15px;
+}
+
+ #footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            background: transparent;
+            margin-left:200px;
+            padding-top:30px;
+ }
+ 
+ .wrapper{
+ position: relative;
+ }
+ 
+ #content {
+    display: table;
+}
+
+#pageFooter {
+    display: table-footer-group;
+}
+
+#pageFooter:after {
+    counter-increment: page;
+    content: counter(page);
+}
+
+#pageFooter:after {
+    counter-increment: page;
+    content:" " counter(page);
+    left: 0; 
+    top: 100%;
+    white-space: nowrap; 
+    z-index: 20;
+    -moz-border-radius: 5px; 
+    -moz-box-shadow: 0px 0px 4px #222;  
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);  
+  }
+</style>
+</head>
+<body>
+
+<!-- <img alt="arteria Logo file" src="https://arteriatech.info/wp-content/uploads/2014/12/arteria-regd-logo.jpg" style="position: relative;hegigh:100px;width:100px;"/> -->
+<!-- <img th:src="${image}" style="position: relative;hegigh:100px;width:100px;"/> --> 
+
+<div>
+	<h3 class="payment-advice">PAYMENT ADVICE</h3>
+</div>
+<div class="box-model">
+	<span><b>Payment Reference No:</b>[[${PaymentReferenceNumber}]]</span>
+	<!-- <span>Beneficiary A/c no:[[${BeneficiaryAccNo}]]</span> -->
+	<span style="margin-left:300px;"><b>Txn Date :</b>[[${TxnDate}]]</span>
+</div>
+
+<div class="main-div">
+<div class="left-box">
+	<span>Beneficiary Name <span style="padding-left: 15px;">:</span> [[${BenificiaryName}]]</span><br/>
+	<span>Beneficiary Code <span style="padding-left: 18px;"> :</span>[[${BeneficiaryCode}]]</span><br/>
+	<span> Payment Method <span style="padding-left: 19px;">:</span> [[${PaymentMethod}]] </span>
+	
+</div>
+<div class="right-box">
+<span>Beneficiary A/c no<span style="padding-left: 17px;">:</span>[[${lstdigAccNo}]]</span><br/>
+<span>IFSC code<span style="padding-left: 60px;">:</span>[[${IFSC}]]</span><br/>
+<span>Bank Reference No<span style="padding-left: 15px;">:</span>[[${BankReferenceNo}]]</span><br/>
+<span>UTR No<span style="padding-left: 70px;">:</span>[[${UTRNo}]]</span><br/>
+<!-- <span>Remarks:[[${Remarks}]]</span> -->
+</div>
+</div>
+
+<div>
+	<span>
+		Dear Sir/Madam,<br/>
+	</span>
+	<p class="paragraph">
+	 
+		We have initiated your payment through IFT with Beneficiary Account No. [[${lstdigAccNo}]]  and IFSC [[${IFSC}]] .
+		For the value of Rs. [[${totalNetAmt}]]([[${AmtInWords}]] only) for the services rendered as mentioned below.<br/>
+		
+		
+	 </p>
+
+</div>
+ <div style="width: 99%;min-height: 590px;">
+	<table cellspacing="0px" width="100%">
+		<tbody>
+			<tr style="background-color:#D3D3D3;height: 25px;">
+				<th style="border:.5px solid black;text-align: center;width:20px;">
+				Document Number
+			   </th>
+			<th style="border: .5px solid black;text-align: center;width:20px;">
+				Document Type
+			</th>
+			<th style="border: .5px solid black;text-align: center;width:20px;">
+				Document Date
+			</th>
+			<th style="border:.5px solid black;text-align: center;width: 25px;">
+				Due Date
+			</th>
+			<th style="border: .5px solid black;text-align: center;width:20px;">
+				Gross Amount
+			</th>
+			<th style="border: .5px solid black;text-align: center;width:20px;">
+				Deduction
+			</th>
+			<th style="border: .5px solid black;text-align: center;width:20px;">
+				Net Amount
+			</th>
+			</tr>
+			<tr th:each="item:${itemList}">
+			<td style="border:.5px solid black;text-align: center; padding: 2px;width:20px;"  th:text="${item.docNumber!=null}?${item.docNumber}:''"/>
+			<td style="border:.5px solid black;text-align: center; padding: 2px;width:20px;"  th:text="${item.docType!=null}?${item.docType}:''"/>
+			<td style="border:.5px solid black;text-align: left; padding: 2px;width:20px;" th:text="${item.docDate!=null}?${item.docDate}:''"/>
+			<td style="border:.5px solid black;text-align: left; padding: 2px;width:25px;" th:text="${item.docDueDate!=null}?${item.docDueDate}:''"/>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;width:20px;" th:text="${item.grossAmount!=null}?${item.grossAmount}:''"/>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;width:20px;" th:text="${item.deduction!=null}?${item.deduction}:''"/>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;width:20px;" th:text="${item.netAmount!=null}?${item.netAmount}:''"/>
+			</tr>
+			<tr>
+			<td colspan="4" style="border:.5px solid black;text-align: cenetr; padding: 2px;">
+			<strong style="float: right;">Total</strong>
+			</td>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;" th:text="${totalGrossAmt}"></td>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;" th:text="${totalDeducationAmt}"></td>
+			<td style="border:.5px solid black;text-align: right; padding: 2px;" th:text="${totalNetAmt}"></td>
+			</tr>
+			
+		</tbody>
+		
+	</table>
+	<small style="margin-left: 550px;">*All amounts are in INR</small>
+	</div>
+	
+	
+<footer id="footer">
+	This is a computer generated advice hence does not require signature.<br/>
+	
+</footer>
+
+<!-- <div id="content">
+  <div id="pageFooter">Page</div>
+</div> -->
+
+</body>
+</html>

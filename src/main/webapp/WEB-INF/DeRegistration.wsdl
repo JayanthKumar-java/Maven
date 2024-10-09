@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bc.arteriatech.com/DeRegistration" xmlns:p1="http://bc.arteriatech.com/DeRegistration" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bc.arteriatech.com/DeRegistration" xmlns="http://bc.arteriatech.com/DeRegistration" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="DT_DeRegistration_Response" type="DT_DeRegistration_Response"/>
+            <xsd:element name="DT_DeRegistration_Request" type="DT_DeRegistration_Request"/>
+            <xsd:complexType name="DT_DeRegistration_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">60663381a6bc11e8cc9e00000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ErrorCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Message" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="URN" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AGGRNAME" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AGGRID" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CORPID" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="USERID" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_DeRegistration_Request">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">a291fb1ba82a11e8a2c200000033cdea</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CorpId" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">e8f7b4b0a6c911e8bb25d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="AggregatorId" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">e8f7b4b1a6c911e8a6efd43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="UserId" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">e8f7b4b2a6c911e89a47d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="URN" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">e8f7b4b3a6c911e89201d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="AggregatorName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">e8f7b4b4a6c911e8aa88d43d7ea83aad</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DT_DeRegistration_Response">
+<wsdl:documentation/>
+    <wsdl:part name="DT_DeRegistration_Response" element="p1:DT_DeRegistration_Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DT_DeRegistration_Request">
+<wsdl:documentation/>
+    <wsdl:part name="DT_DeRegistration_Request" element="p1:DT_DeRegistration_Request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DeRegistration">
+<wsdl:documentation/>
+    <wsdl:operation name="DeRegistration">
+<wsdl:documentation/>
+      <wsdl:input message="p1:DT_DeRegistration_Request">
+    </wsdl:input>
+      <wsdl:output message="p1:DT_DeRegistration_Response">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeRegistrationBinding" type="p1:DeRegistration">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__binding"/>
+        </wsp:Policy>
+    <wsdl:operation name="DeRegistration">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeRegistrationService">
+    <wsdl:port name="DeRegistrationPort" binding="p1:DeRegistrationBinding">
+      <soap:address location="https://l20320-iflmap.hcisbp.eu1.hana.ondemand.com:443/cxf/ARTEC/BC/DeRegistration"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:UsingPolicy required="true"/>
+    <wsp:Policy wsu:Id="BN__binding">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken>
+                                    <wsp:Policy>
+                                        <wsp:ExactlyOne>
+                                            <sp:HttpBasicAuthentication/>
+                                            <sp:RequireClientCertificate/>
+                                        </wsp:ExactlyOne>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <sp:Basic256/>
+                                    <sp:Basic192/>
+                                    <sp:Basic128/>
+                                    <sp:TripleDes/>
+                                    <sp:Basic256Rsa15/>
+                                    <sp:Basic192Rsa15/>
+                                    <sp:Basic128Rsa15/>
+                                    <sp:TripleDesRsa15/>
+                                    <sp:Basic256Sha256/>
+                                    <sp:Basic192Sha256/>
+                                    <sp:Basic128Sha256/>
+                                    <sp:TripleDesSha256/>
+                                    <sp:Basic256Sha256Rsa15/>
+                                    <sp:Basic192Sha256Rsa15/>
+                                    <sp:Basic128Sha256Rsa15/>
+                                    <sp:TripleDesSha256Rsa15/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

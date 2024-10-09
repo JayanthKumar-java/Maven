@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 1cm;
+        }
+      </style>
+</head>
+<body>
+    <h1>GENERAL DETAILS</h1>
+     
+    <div>
+      <table> 
+        <tr>
+          <th>Format:</th>
+          <td>Home Care Non-Food (000008)</td>
+          <th>Vendor Address1:</th>
+          <td style="white-space: nowrap;">[[${VendorAddress1}]]</td>
+          <th>Mobile:</th>
+          <td style="white-space: nowrap;">[[${Mobile}]]</td>
+
+        </tr>
+        <tr>
+          <th>Vendor Type:</th>
+          <td>Domestic (000010)</td>
+          <th>Vendor Address2:</th>
+          <td style="white-space: nowrap;">[[${VendorAddress2}]]</td>
+          <th>Contact Person Name:</th>
+          <td style="white-space: nowrap;">[[${ContactPersonName}]]</td>
+        </tr>
+        <tr>
+          <th>Payment Terms:</th>
+          <td>90 days due from the date of GRN (Z90)</td>
+          <th>Street:</th>
+          <td>${Street:}</td>
+          <th>Telephone No:</th>
+          <td>${Telephone No:}</td>
+        </tr>
+        <tr>
+          <th>Category of Vendor:</th>
+          <td>Merchandising (000001)</td>
+          <th>City:</th>
+          <td>${City:}</td>
+          <th>Fax:</th>
+          <td>${Fax:}</td>
+        </tr>
+        <tr>
+          <th>Vendor Class:</th>
+          <td>${vendorClass}</td>
+          <th>Country:</th>
+          <td>${Country:}</td>
+          <th>Email 1:</th>
+          <td>${Email 1::}</td>
+        </tr>
+        <tr>
+          <th>Tax Declaration Type:</th>
+          <td>${Tax Declaration Type:}</td>
+          <th>Region:</th>
+          <td>${Region:}</td>
+          <th>Email 2:</th>
+          <td>${Email 2:}</td>
+        </tr>
+        <tr>
+          <th>Title:</th>
+          <td>${Title:}</td>
+          <th>Postal Code:</th>
+          <td>${Postal Code:}</td>
+          <th>Email 3:</th>
+          <td>${Email 3:}</td>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>${Name:}</td>
+          <th>Currency:</th>
+          <td>${Currency:}</td>
+          <th>Last return filed for the Month of GSTR-1:</th>
+          <td>${Last return filed for the Month of GSTR-1:}</td>
+        </tr>
+        <tr>
+          <th>MSME Number:</th>
+          <td>${MSME Number:}</td>
+          <th>MSME Registered:</th>
+          <td><input type="radio" id="yes" name="answer" value="yes"/>Yes <input type="radio" id="yes" name="answer" value="yes"/> No</td>
+          <th>Last return filed for the Month of GSTR-3B:</th>
+          <td>${Last return filed for the Month of GSTR-3B:}</td>
+        </tr>
+        <tr>
+          <th>MSME Type:</th>
+          <td>${MSME Type:}</td>
+          <th>Is Registered office address Same as billing address:</th>
+          <td><input type="radio" id="yes" name="answertwo" value="yes"/>Yes <input type="radio" id="yes" name="answertwo" value="yes"/> No</td>
+          <th>MSME Valid Date:</th>
+          <td>${MSME Valid Date}</td>
+        </tr>
+        <tr>
+          <th>MSME Trading/ NON trading status</th>
+          <td>${MSME Trading/ NON trading status}</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <th>Commencement Date:</th>
+          <td>${Commencement Date:}</td>
+        </tr>
+        <tr>
+          <th>&nbsp;</th>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <th>Udyam Reg. Date:</th>
+          <td>${Udyam Reg. Date:}</td>
+        </tr>
+
+      </table>
+    </div>
+</body>
+</html>
