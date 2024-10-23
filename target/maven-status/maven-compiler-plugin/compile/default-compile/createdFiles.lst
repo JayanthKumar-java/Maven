@@ -328,6 +328,7 @@ com/arteriatech/support/SCFEligibility.class
 com/arteriatech/bc/eSignContractCALPartnership/ESignContractCALPartnership.class
 com/arteriatech/bc/SCFDealerOutstanding/SCFDealerOutstandingService.class
 com/arteriatech/support/DownloadSalesReport.class
+com/arteriatech/servlet/fscimInquiryTesting.class
 com/arteriatech/support/ConfigTypesets.class
 com/arteriatech/aml/DummyPreEligibilityCheck.class
 com/arteriatech/bc/SCFAccount/SCFAccountServiceLocator.class
@@ -367,6 +368,7 @@ com/arteriatech/bc/eSignContractCALProprietorship/ESignContractCALProprietorship
 com/arteriatech/support/AsyncListner.class
 com/arteriatech/support/GetApproval.class
 com/arteriatech/pg/TestOData.class
+com/arteriatech/servlet/GroupDetail.class
 com/arteriatech/cf/PaymentAdvice$3.class
 com/arteriatech/bc/SCFCorpDealerOutstanding/SCFCorpDealerOutstanding_PortalResponse.class
 com/arteriatech/support/RenewalSCFReset.class
@@ -425,6 +427,7 @@ com/arteriatech/aml/PreEligibilityChecks.class
 com/arteriatech/bc/SCFDealerOutstanding/SCFDealerOutstanding_ResponseHeader.class
 com/arteriatech/support/QuarterlySalesReport.class
 com/arteriatech/hana/UploadPeakLimit.class
+com/arteriatech/servlet/PdfTrainig.class
 com/arteriatech/calback/CallbackDependenciesServlet.class
 com/arteriatech/bc/SCFCorpDealerOutstanding/SCFCorpDealerOutstandingBindingImpl.class
 com/arteriatech/bc/SCFAccount/SCFAccountService.class

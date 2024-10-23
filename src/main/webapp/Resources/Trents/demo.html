@@ -6,116 +6,986 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
     <style>
-        @page {
+         @page {
             size: A4 landscape;
             margin: 1cm;
+            /* border: 5px solid black; add a 1px solid black border */
+            /* border-radius: 5px; optional: add a rounded corner effect */
         }
+        .declaration-box {
+            border: 1px solid black;
+            padding: 10px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #GROUPTable th, #GROUPTable td {
+            border: 1px solid black;  /* Adding border to this table */
+            padding: 10px;
+            text-align: left;
+        }
+ 
+        #ARBITRATIONTable th,
+        #ARBITRATIONTable td {
+            border: 1px solid black;
+            /* Adding border to this table */
+            padding: 10px;
+            text-align: left;
+        }
+ 
+ 
+        .TransLeft {
+            width: 40%;
+            float: left;
+            border: 1px solid black;
+            padding: 10px;
+        }
+ 
+        .TransLeft tr {
+            border: 1px solid black;
+            padding: 10px;
+        }
+ 
+        .TransLeft th,
+        .TransLeft td {
+            border: 1px solid black;
+            padding: 10px;
+            /* padding: 5px; */
+        }
+ 
+        .TransRight {
+            width: 40%;
+            float: right;
+            border: 1px solid black;
+            padding: 10px;
+        }
+ 
+        .TransRight tr {
+            border: 1px solid black;
+            padding: 10px;
+        }
+ 
+        .TransRight th,
+        .TransRight td {
+            border: 1px solid black;
+            padding: 10px;
+            /* padding: 5px; */
+        }
+        .container {
+            overflow: hidden;
+        }
+ 
+        .container2 {
+            overflow: hidden;
+        }
+        .GSTTableleft{
+            margin-left: 5%;
+            width: 50%;
+            float: left;
+            padding: 2px;
+            /* line-height: 100%;  for value not for label */
+        }
+        .GSTTableleft tr,
+        .GSTTableleft th,
+        .GSTTableleft td{
+            padding: 5px;
+        }
+        .GSTTableright{
+            width: 40%;
+            float: right;
+            padding: 10px;
+        }
+        .GSTTableright tr,
+        .GSTTableright th,
+        .GSTTableright td{
+            padding: 10px;
+        }
+        .clientDetailsTable th,
+        .clientDetailsTable td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 10px;
+        }
+ 
+        .GSTPANTable th,
+        .GSTPANTable td{
+            padding: 5px;
+        }
+        .DeclarationTable1 {
+            border: 1px solid black;
+   
+        }
+        .DeclarationTable2 th,
+        .DeclarationTable2 td{
+            padding: 10px;
+        }
+        .DeclarationTable th,
+        .DeclarationTable td,
+        .DeclarationTable tr{
+          padding: 10px;
+        }
+        
       </style>
 </head>
 <body>
-    <h1>GENERAL DETAILS</h1>
+    <h2>GENERAL DETAILS</h2>
      
-    <div>
-      <table> 
+      <table cellspacing="20"> 
         <tr>
-          <th>Format:</th>
-          <td>Home Care Non-Food (000008)</td>
-          <th>Vendor Address1:</th>
-          <td style="white-space: nowrap;">[[${VendorAddress1}]]</td>
-          <th>Mobile:</th>
-          <td style="white-space: nowrap;">[[${Mobile}]]</td>
-
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Format:</th>
+          <td style="vertical-align: top; width: 20%; ">[[${HomeCare}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Vendor Address1:</th>
+          <td style="vertical-align: top; width: 18%; ">[[${VendorAddress1}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Mobile:</th>
+          <td style="vertical-align: top; width: 15%;">[[${Mobile}]]</td>
         </tr>
         <tr>
-          <th>Vendor Type:</th>
-          <td>Domestic (000010)</td>
-          <th>Vendor Address2:</th>
-          <td style="white-space: nowrap;">[[${VendorAddress2}]]</td>
-          <th>Contact Person Name:</th>
-          <td style="white-space: nowrap;">[[${ContactPersonName}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Vendor Type:</th>
+          <td style="vertical-align: top;">[[${VendorType}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Vendor Address2:</th>
+          <td style="vertical-align: top;">[[${VendorAddress2}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Contact Person Name:</th>
+          <td style="vertical-align: top;">[[${ContactPersonName}]]</td>
+        </tr>
+         <tr>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Payment Terms:</th>
+          <td style="vertical-align: top;">[[${PaymentTerms}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Street:</th>
+          <td style="vertical-align: top;">[[${Street}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Telephone No:</th>
+          <td style="vertical-align: top;">[[${TelephoneNo}]]</td>
+        </tr>
+         <tr>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Category of Vendor:</th>
+          <td style="vertical-align: top;">[[${CategoryofVendor}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">City:</th>
+          <td style="vertical-align: top;">[[${City}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Fax:</th>
+          <td style="vertical-align: top;">[[${Fax}]]</td>
         </tr>
         <tr>
-          <th>Payment Terms:</th>
-          <td>90 days due from the date of GRN (Z90)</td>
-          <th>Street:</th>
-          <td>${Street:}</td>
-          <th>Telephone No:</th>
-          <td>${Telephone No:}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Vendor Class:</th>
+          <td style="vertical-align: top;">[[${vendorClass}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">District:</th>
+          <td style="vertical-align: top;">[[${District}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Email 1:</th>
+          <td style="vertical-align: top;">[[${Email1}]]</td>
         </tr>
         <tr>
-          <th>Category of Vendor:</th>
-          <td>Merchandising (000001)</td>
-          <th>City:</th>
-          <td>${City:}</td>
-          <th>Fax:</th>
-          <td>${Fax:}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Tax Declaration Type:</th>
+          <td style="vertical-align: top;">[[${TaxDeclaration}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Country:</th>
+          <td style="vertical-align: top;">[[${Country}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Email 2:</th>
+          <td style="vertical-align: top;">[[${Email2}]]</td>
         </tr>
         <tr>
-          <th>Vendor Class:</th>
-          <td>${vendorClass}</td>
-          <th>Country:</th>
-          <td>${Country:}</td>
-          <th>Email 1:</th>
-          <td>${Email 1::}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Title:</th>
+          <td style="vertical-align: top;">[[${Title}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Region :</th>
+          <td style="vertical-align: top;">[[${Region}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Email 3:</th>
+          <td style="vertical-align: top;">[[${Email3}]]</td>
         </tr>
         <tr>
-          <th>Tax Declaration Type:</th>
-          <td>${Tax Declaration Type:}</td>
-          <th>Region:</th>
-          <td>${Region:}</td>
-          <th>Email 2:</th>
-          <td>${Email 2:}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Name:</th>
+          <td style="vertical-align: top;">[[${Name}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">PostalCode:</th>
+          <td style="vertical-align: top;">[[${PostalCode}]]</td>
+          <th style="padding-left: 0px; vertical-align: top; text-align: right;">Last return filed for the Month of GSTR-1:</th>
+          <td style="vertical-align: top;">[[${GSTR}]]</td>
         </tr>
         <tr>
-          <th>Title:</th>
-          <td>${Title:}</td>
-          <th>Postal Code:</th>
-          <td>${Postal Code:}</td>
-          <th>Email 3:</th>
-          <td>${Email 3:}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">MSME Number:</th>
+          <td style="vertical-align: top;">[[${MSMENumber}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Currency:</th>
+          <td style="vertical-align: top;">[[${Currency}]]</td>
+          <th style="padding-left: 0px; vertical-align: top; text-align: right;">Last return filed for the Month of GSTR-3B:</th>
+          <td style="vertical-align: top;">[[${Lastreturn}]]</td>
         </tr>
         <tr>
-          <th>Name:</th>
-          <td>${Name:}</td>
-          <th>Currency:</th>
-          <td>${Currency:}</td>
-          <th>Last return filed for the Month of GSTR-1:</th>
-          <td>${Last return filed for the Month of GSTR-1:}</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">MSME Type:</th>
+          <td style="vertical-align: top;">[[${MSMEType}]]</td>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">MSME Registered:</th>
+          <!-- <td><input type="radio" id="yes" name="answer" value="yes"/>Yes <input type="radio" id="yes" name="answer" value="yes"/> No</td> -->
+          <td style="vertical-align: top;">[[${MSMERegistered}]]</td> 
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">MSME Valid Date:</th>
+          <td style="vertical-align: top;">[[${MSMEValidDate}]]</td>    
         </tr>
         <tr>
-          <th>MSME Number:</th>
-          <td>${MSME Number:}</td>
-          <th>MSME Registered:</th>
-          <td><input type="radio" id="yes" name="answer" value="yes"/>Yes <input type="radio" id="yes" name="answer" value="yes"/> No</td>
-          <th>Last return filed for the Month of GSTR-3B:</th>
-          <td>${Last return filed for the Month of GSTR-3B:}</td>
-        </tr>
-        <tr>
-          <th>MSME Type:</th>
-          <td>${MSME Type:}</td>
-          <th>Is Registered office address Same as billing address:</th>
-          <td><input type="radio" id="yes" name="answertwo" value="yes"/>Yes <input type="radio" id="yes" name="answertwo" value="yes"/> No</td>
-          <th>MSME Valid Date:</th>
-          <td>${MSME Valid Date}</td>
-        </tr>
-        <tr>
-          <th>MSME Trading/ NON trading status</th>
-          <td>${MSME Trading/ NON trading status}</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <th>Commencement Date:</th>
-          <td>${Commencement Date:}</td>
+          <th style="padding-left: 0px; vertical-align: top; text-align: right;">MSME Trading/ NON trading status: </th>
+          <td style="white-space: nowrap; vertical-align: top;">[[${MSMETrading}]]</td>
+          <th>Is Registered office <br>address Same as billing address:</br></th>
+          <!-- <td><input type="radio" id="yes" name="answertwo" value="yes"/>Yes <input type="radio" id="yes" name="answertwo" value="yes"/> No</td> -->
+          <td style="vertical-align: top;">[[${billingaddress}]]</td> 
+          <th style="padding-left: 0px; vertical-align: top; text-align: right;">Commencement Date:</th>
+          <td style="white-space: nowrap; vertical-align: top;">[[${CommencementDate}]]</td>
         </tr>
         <tr>
           <th>&nbsp;</th>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <th>Udyam Reg. Date:</th>
-          <td>${Udyam Reg. Date:}</td>
-        </tr>
+          <th style="padding-left: 0px; vertical-align: top; text-align: right;">Udyam Reg. Date:</th>
+          <td>[[${UdyamReg}]]</td>
+        </tr> 
 
       </table>
-    </div>
+   
+  
+      <hr></hr>
+      <!-- <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br> -->
+    
+      <h3>Work Place Address</h3>
+
+      <table cellspacing="5">
+            <tr>
+              <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Address1:</th>
+              <td style="vertical-align: top;  width: 18%;">[[${RegisteredAddress1}]]</td>
+              <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered District:</th>
+              <td style="vertical-align: top; width: 23%;">[[${RegisteredDistrict}]]</td>
+              <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Contact Name:</th>
+              <td style="vertical-align: top;">[[${RegisteredContactName}]]</td>
+            </tr>
+              <tr>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Address2:</th>
+                  <td style="vertical-align: top;">[[${RegisteredAddress2}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Region:</th>
+                  <td style="vertical-align: top;">[[${RegisteredRegion}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered TelephoneNo:</th>
+                  <td style="vertical-align: top;">[[${RegisteredTelephoneNo}]]</td>
+              </tr>
+              <tr>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Street:</th>
+                  <td style="vertical-align: top;">[[${RegisteredStreet}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Postal Code:</th>
+                  <td style="vertical-align: top;">[[${RegisteredPostalCode}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Fax No:</th>
+                  <td style="vertical-align: top;">[[${RegisteredFaxNo}]]</td>
+              </tr>
+              <tr>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered City:</th>
+                  <td style="vertical-align: top;">[[${RegisteredCity}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered  Mobile No:</th>
+                  <td style="vertical-align: top;">[[${RegisteredMobileNo}]]</td>
+                  <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registered Email ID:</th>
+                  <td style="vertical-align: top;">[[${RegisteredEmailID}]]</td>
+              </tr>
+        </table>
+      <hr></hr>
+
+      <br></br>
+    
+
+      <!-- <h3>GROUP COMPANIES And BRANCH DETAILS</h3>
+ 
+    <table id="GROUPTable">
+            <tr>
+                <th>Serial No</th>
+                <th>Name</th>
+                <th>Vendor Address1</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>District</th>
+                <th>Postal Code</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">[[${serialNo}]]</td>
+                <td style="vertical-align: top;">[[${name}]]</td>
+                <td style="vertical-align: top;">[[${vendorAddress1}]]</td>
+                <td style="vertical-align: top;">[[${street}]]</td>
+                <td style="vertical-align: top;">[[${city}]]</td>
+                <td style="vertical-align: top;">[[${district}]]</td>
+                <td style="vertical-align: top;">[[${postalCode}]]</td>
+                <td style="vertical-align: top;">[[${country}]]</td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">[[${serialNo}]]</td>
+              <td style="vertical-align: top;">[[${name}]]</td>
+              <td style="vertical-align: top;">[[${vendorAddress1}]]</td>
+              <td style="vertical-align: top;">[[${street}]]</td>
+              <td style="vertical-align: top;">[[${city}]]</td>
+              <td style="vertical-align: top;">[[${district}]]</td>
+              <td style="vertical-align: top;">[[${postalCode}]]</td>
+              <td style="vertical-align: top;">[[${country}]]</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">[[${serialNo}]]</td>
+            <td style="vertical-align: top;">[[${name}]]</td>
+            <td style="vertical-align: top;">[[${vendorAddress1}]]</td>
+            <td style="vertical-align: top;">[[${street}]]</td>
+            <td style="vertical-align: top;">[[${city}]]</td>
+            <td style="vertical-align: top;">[[${district}]]</td>
+            <td style="vertical-align: top;">[[${postalCode}]]</td>
+            <td style="vertical-align: top;">[[${country}]]</td>
+        </tr>
+    </table>
+    <hr></hr> -->
+
+    <!-- <h3>GROUP COMPANIES And BRANCH DETAILS</h3>
+<table id="GROUPTable">
+    <tr>
+        <th>Serial No</th>
+        <th>Name</th>
+        <th>Vendor Address1</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>District</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+    </tr>
+    <tr th:each="row : ${groupDetails}">
+        <td th:text="${row.serialNo}"></td>
+        <td th:text="${row.name}"></td>
+        <td th:text="${row.vendorAddress1}"></td>
+        <td th:text="${row.street}"></td>
+        <td th:text="${row.city}"></td>                                                
+        <td th:text="${row.district}"></td>
+        <td th:text="${row.postalCode}"></td>
+        <td th:text="${row.country}"></td>
+    </tr>
+</table> -->
+
+  <h3>GROUP COMPANIES And BRANCH DETAILS</h3>
+  <table id="GROUPTable">
+    <tr>
+      <th>Serial No</th>
+      <th>Name</th>
+      <th>Vendor Address1</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>District</th>
+      <th>Postal Code</th>
+      <th>Country</th>
+  </tr>
+    <tr th:each="entry : ${values}">
+        <td th:text="${entry.key}"></td>
+        <td th:each="value : ${entry.value}">
+            <span th:text="${value}"></span>
+        </td>
+    </tr>
+  </table>
+
+  
+    <h3>Factory Details</h3>
+ 
+    <table id="GROUPTable">
+            <tr>
+                <th>Serial No</th>
+                <th>Default</th>
+                <th>Name</th>
+                <th>Vendor Address1</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>District</th>
+                <th>Postal Code</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">[[${serialNo}]]</td>
+              <td style="vertical-align: top;">[[${Default}]]</td>
+              <td style="vertical-align: top;">[[${name}]]</td>
+              <td style="vertical-align: top;">[[${vendorAddress1}]]</td>
+              <td style="vertical-align: top;">[[${street}]]</td>
+              <td style="vertical-align: top;">[[${city}]]</td>
+              <td style="vertical-align: top;">[[${district}]]</td>
+              <td style="vertical-align: top;">[[${postalCode}]]</td>
+              <td style="vertical-align: top;">[[${country}]]</td>
+            </tr>
+    </table>
+    <hr></hr>
+    
+    <h3>FACTORY CERTIFICATE DETAILS</h3>
+
+    <table id="GROUPTable">
+      <tr>
+        <th>SerialNo</th>
+        <th>Factory Name</th>
+        <th>Certificate Type</th>
+        <th>Certificate No</th>
+        <th>Certificate Date</th>
+        <th>Validity Date</th>
+        <th>Certified By</th>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">[[${SerialNo}]]</td>
+              <td style="vertical-align: top;">[[${FactoryName}]]</td>
+              <td style="vertical-align: top;">[[${CertificateType}]]</td>
+              <td style="vertical-align: top;">[[${CertificateNo}]]</td>
+              <td style="vertical-align: top;">[[${CertificateDate}]]</td>
+              <td style="vertical-align: top;">[[${ValidityDate}]]</td>
+              <td style="vertical-align: top;">[[${CertifiedBy}]]</td>
+      </tr>
+     </table>
+     <hr></hr>
+
+     <div class="container">
+      <h3>TRANSPORTER DETAILS</h3>
+      <table>
+          <tr>
+              <th style="text-align: left;">
+                  <h4>Type of Vechicle:Owned</h4>
+              </th>
+              <th>&nbsp;</th>
+              <th style="width: 40%;">
+                  <h4>Type of Vechicle:Hired(7)</h4>
+              </th>
+          </tr>
+      </table>
+      <table class="TransLeft">
+          <tr>
+              <th>Feet Type</th>
+              <th>Feet No</th>
+          </tr>
+          <tr>
+              <td>24 Feet</td>
+              <td>[[${FeetOne}]]</td>
+          </tr>
+          <tr>
+              <td>20 Feet</td>
+              <td>[[${FeetTwo}]]</td>
+          </tr>
+          <tr>
+              <td>17 Feet</td>
+              <td>[[${FeetThree}]]</td>
+          </tr>
+          <tr>
+              <td>14 Feet</td>
+              <td>[[${FeetFour}]]</td>
+          </tr>
+          <tr>
+              <td>10 Feet</td>
+              <td>[[${FeetTen}]]</td>
+          </tr>
+          <tr>
+              <td>TATA ACE</td>
+              <td>[[${TATAACE}]]</td>
+          </tr>
+      </table>
+
+      <table class="TransRight">
+          <tr>
+              <th>Feet Type</th>
+              <th>Feet No</th>
+          </tr>
+          <tr>
+              <td>24 Feet</td>
+              <td>[[${FeetTwentyFour}]]</td>
+          </tr>
+          <tr>
+              <td>20 Feet</td>
+              <td>[[${FeetTwenty}]]</td>
+          </tr>
+          <tr>
+              <td>17 Feet</td>
+              <td>[[${FeetSeventeen}]]</td>
+          </tr>
+          <tr>
+              <td>14 Feet</td>
+              <td>[[${FeetFourteen}]]</td>
+          </tr>
+          <tr>
+              <td>10 Feet</td>
+              <td>[[${FeetTen}]]</td>
+          </tr>
+          <tr>
+              <td>TATA ACE</td>
+              <td>[[${TATAACE}]]</td>
+          </tr>
+      </table>
+  </div>
+     
+
+  <hr></hr>
+
+
+
+        <h3>REGISTRATION DETAILS</h3>
+
+    <table id="GROUPTable">
+      <tr>
+        <th>Registration Type</th>
+        <th>Registration No</th>
+      </tr>
+      <tr>
+        <th>CIN Number</th>
+        <td style="vertical-align: top;">[[${cinNo}]]</td>
+      </tr>
+      <tr>
+        <th>GSTN Number</th>
+        <td style="vertical-align: top;">[[${gstn_number}]]</td>
+      </tr>
+      <tr>
+        <th>PAN Number</th>
+        <td style="vertical-align: top;">[[${pan_number}]]</td>
+      </tr>
+    </table>
+
+
+    <br></br>
+     <!-- <table>
+      <tr>
+        <th>GST Details</th>
+      </tr>
+      <br></br>
+      <tr>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Constitution of Business:</th>
+        <td style="vertical-align: top;">[[${Constitution}]]</td>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">State jurisdiction:</th>
+        <td style="vertical-align: top;">STATE - MAHARASHTRA,ZONE - <br></br>PUNE_SOUTH_WEST,DIVISION - <br></br>PUNE_SOUTH_EAST,CHARGE - BHOSARI_514<br></br>(JURISDICTIONAL OFFICE)</td>
+       <td style="vertical-align: top;">STATE - MAHARASHTRA,ZONE - PUNE_SOUTH_WEST,DIVISION - PUNE_SOUTH_EAST,CHARGE - BHOSARI_514(JURISDICTIONAL OFFICE)</td>
+      </tr>
+      <br></br>
+      <tr>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Legal Name of Business:</th>
+        <td style="vertical-align: top;">[[${Business}]]</td>
+      </tr>
+      <tr>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Trade name:</th>
+        <td>LL PRODUCTS INDIA PRIVATE LIMITED</td>
+      </tr>
+      <tr>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registration Date:</th>
+        <td>2017-07-01</td>
+      </tr>
+      <tr>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">GSTIN Status:</th>
+        <td>ACTIVE</td>
+      </tr>
+      <tr>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Tax Payer Type:</th>
+        <td style="vertical-align: top;">REGULAR</td>
+        <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Centre jurisdiction:</th>
+        <td>STATE - CBIC,ZONE - PUNE,COMMISSIONERATE - PUNE -<br></br> I,DIVISION - DIVISION-IV CHAKAN,RANGE - RANGE-I</td>
+      </tr>
+      </table>
+      <br></br>
+      <br></br>
+  <table>
+      <tr>
+        <th>PAN Details</th>
+      </tr>
+      <tr>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Type:</th>
+        <td style="vertical-align: top;">Company</td>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Status:</th>
+        <td style="vertical-align: top;">VALID</td>
+      </tr>
+      <tr>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Name:</th>
+        <td style="vertical-align: top;">LL PRODUCTS INDIA PRIVATE LIMITED</td>
+      </tr>
+      <tr>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Pan No is 206 AB Compliant:</th>
+        <td style="vertical-align: top;">true</td>
+      </tr>
+      <tr>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Specified Person u/s 206AB  206CCA:</th>
+        <td style="vertical-align: top;">No</td>
+        <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Return File Status:</th>
+        <td style="vertical-align: top;">operative</td>
+      </tr>
+    </table>  -->
+
+    <div class="container2">
+      <table>
+          <tr>
+              <th>GST Details</th>
+            </tr>
+            <br></br>
+      </table>
+  <table class="GSTTableleft">
+   
+    <tr>
+      <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Constitution of Business:</th>
+      <td style="vertical-align: top;">[[${Constitution}]]</td>
+     
+     <!-- <td style="vertical-align: top;">STATE - MAHARASHTRA,ZONE - <br></br>PUNE_SOUTH_WEST,DIVISION - <br></br>PUNE_SOUTH_EAST,CHARGE - BHOSARI_514<br></br>(JURISDICTIONAL OFFICE)</td> -->
+     
+    </tr>
+    <tr>
+      <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Legal Name of Business:</th>
+      <td style="vertical-align: top;">[[${Business}]]</td>
+    </tr>
+    <tr>
+      <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Trade name:</th>
+      <td>LL PRODUCTS INDIA PRIVATE LIMITED</td>
+    </tr>
+    <tr>
+      <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Registration Date:</th>
+      <td>2017-07-01</td>
+    </tr>
+    <tr>
+      <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">GSTIN Status:</th>
+      <td>ACTIVE</td>
+    </tr>
+    <tr>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Tax Payer Type:</th>
+      <td style="vertical-align: top;">REGULAR</td>
+            </tr>
+    </table>
+    <table  class="GSTTableright">
+      <tr>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">State jurisdiction:</th>
+          <td style="vertical-align: top;">STATE - MAHARASHTRA,ZONE - PUNE_SOUTH_WEST,DIVISION - PUNE_SOUTH_EAST,CHARGE - BHOSARI_514(JURISDICTIONAL OFFICE)</td>
+      </tr>
+      <tr>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+      </tr>
+      <tr>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+      </tr>
+      <tr>
+          <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Centre jurisdiction:</th>
+          <td>STATE - CBIC,ZONE - PUNE,COMMISSIONERATE - PUNE -<br></br> I,DIVISION - DIVISION-IV CHAKAN,RANGE - RANGE-I</td>
+ 
+      </tr>
+
+    </table>
+  </div>
+    <br></br>
+    <br></br>
+        
+<table class="GSTPANTable">
+    <tr>
+      <th>PAN Details</th>
+    </tr>
+    <tr>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Type:</th>
+      <td style="vertical-align: top;">Company</td>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Status:</th>
+      <td style="vertical-align: top;">VALID</td>
+    </tr>
+    <tr>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Name:</th>
+      <td style="vertical-align: top;">LL PRODUCTS INDIA PRIVATE LIMITED</td>
+    </tr>
+    <tr>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Pan No is 206 AB Compliant:</th>
+      <td style="vertical-align: top;">true</td>
+    </tr>
+    <tr>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Specified Person u/s 206AB  206CCA:</th>
+      <td style="vertical-align: top;">No</td>
+      <th style="width: 25%; white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Return File Status:</th>
+      <td style="vertical-align: top;">operative</td>
+    </tr>
+  </table>
+
+    <h3>Bank Details</h3>
+ 
+    <table id="GROUPTable">
+            <tr>
+                <th>SerialNo</th>
+                <th>Bank A/c Type</th>
+                <th>Bank  Account No</th>
+                <th>Account Holder</th>
+                <th>IFSC Code</th>
+                <th>Transfer Mode</th>
+                <th>Bank Name</th>
+                <th>Bank Branch</th>
+                <th>Bank Address1</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Bank Status</th>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">[[${serialNo}]]</td>
+              <td style="vertical-align: top;">[[${BankAcType}]]</td>
+              <td style="vertical-align: top;">[[${BankAccountNo}]]</td>
+              <td style="vertical-align: top;">[[${AccountHolder}]]</td>
+              <td style="vertical-align: top;">[[${IFSCCode}]]</td>
+              <td style="vertical-align: top;">[[${TransferMode}]]</td>
+              <td style="vertical-align: top;">[[${BankName}]]</td>
+              <td style="vertical-align: top;">[[${BankBranch}]]</td>
+              <td style="vertical-align: top;">[[${BankAddress1}]]</td>
+              <td style="vertical-align: top;">[[${City}]]</td>
+              <td style="vertical-align: top;">[[${Country}]]</td>
+              <td style="vertical-align: top;">[[${BankStatus}]]</td>
+            </tr>
+    </table>
+    <hr></hr>
+
+     <h3>Contact Details</h3>
+ 
+    <table id="GROUPTable">
+            <tr>
+                <th>SerialNo</th>
+                <th>Contact Person Name</th>
+                <th>Function</th>
+                <th>Year of experience</th>
+                <th>Firm experience</th>
+                <th>City</th>
+                <th>Postal Code</th>
+                <th>Nationality</th>
+                <th>Mobile</th>
+                <th>Email Address</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">[[${serialNo}]]</td>
+              <td style="vertical-align: top;">[[${ContactPersonName}]]</td>
+              <td style="vertical-align: top;">[[${Function}]]</td>
+              <td style="vertical-align: top;">[[${Yearofexperience}]]</td>
+              <td style="vertical-align: top;">[[${Firmexperience}]]</td>
+              <td style="vertical-align: top;">[[${City}]]</td>
+              <td style="vertical-align: top;">[[${PostalCode}]]</td>
+              <td style="vertical-align: top;">[[${Nationality}]]</td>
+              <td style="vertical-align: top;">[[${Mobile}]]</td>
+              <td style="vertical-align: top;">[[${EmailAddress}]]</td>
+              <td style="vertical-align: top;">[[${Address}]]</td>
+            </tr>
+    </table>
+    <hr></hr>
+
+
+
+     <h3>Financial Details</h3>
+ 
+    <table id="GROUPTable">
+            <tr>
+                <th>SerialNo</th>
+                <th>Financial Year</th>
+                <th>Annual Revenue turnOver</th>
+                <th>Revenue Currency</th>
+                <th>Holding Capacity</th>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">[[${serialNo}]]</td>
+              <td style="vertical-align: top;">[[${FinancialYear}]]</td>
+              <td style="vertical-align: top;">[[${AnnualRevenueturnOver}]]</td>
+              <td style="vertical-align: top;">[[${RevenueCurrency}]]</td>
+              <td style="vertical-align: top;">[[${HoldingCapacity}]]</td>
+            </tr>
+    </table>
+    <hr></hr>
+
+    <h3>Certificate Details</h3>
+ 
+    <table id="GROUPTable">
+        <thead>
+            <tr>
+                <th>SerialNo</th>
+                <th>Certificate Type</th>
+                <th>Certificate No</th>
+                <th>Certificate Date</th>
+                <th>Validity Date</th>
+                <th>Certified By</th>
+                <th>Name of the entity</th>
+                <th>Licenece Type</th>
+                <th>Registered Address</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td style="vertical-align: top;">[[${SerialNo}]]</td>
+              <td style="vertical-align: top;">[[${CertificateType}]]</td>
+              <td style="vertical-align: top;">[[${CertificateNo}]]</td>
+              <td style="vertical-align: top;">[[${CertificateDate}]]</td>
+              <td style="vertical-align: top;">[[${ValidityDate}]]</td>
+              <td style="vertical-align: top;">[[${CertifiedBy}]]</td>
+              <td style="vertical-align: top;">[[${Nameoftheentity}]]</td>
+              <td style="vertical-align: top;">[[${LiceneceType}]]</td>
+              <td style="vertical-align: top;">[[${RegisteredAddress}]]</td>
+              <td style="vertical-align: top;">[[${Status}]]</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr></hr> 
+
+    <div>
+      <h3>ADDITIONAL INFO</h3>
+      <table id="GROUPTable">
+          <thead>
+              <tr>
+                  <th>Serial No</th>
+                  <th>Vendor Question</th>
+                  <th>Yes/No</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Row 1 -->
+              <tr>
+                  <td>1</td>
+                  <td class="question">Do you submit Annual Return of Hazardous / Other Waste to Pollution Control Board
+                  </td>
+                  <td>[[${YesNo1}]]</td>
+              </tr>
+              <!-- Row 2 -->
+              <tr>
+                  <td>2</td>
+                  <td class="question">Do you Harvest Rain Water in your premises</td>
+                  <td>[[${YesNo2}]]</td>
+              </tr>
+              <!-- Row 3 -->
+              <tr>
+                  <td>3</td>
+                  <td class="question">Renewable energy on the premises (compulsory)</td>
+                  <td>[[${YesNo3}]]</td>
+              </tr>
+              <!-- Row 4 -->
+              <tr>
+                  <td>4</td>
+                  <td class="question">Do you have full time qualified HSE professionals on your roll</td>
+                  <td>[[${YesNo4}]]</td>
+              </tr>
+              <!-- Row 5 -->
+              <tr>
+                  <td>5</td>
+                  <td class="question">Do you conduct Environmental Monitoring inside your premises</td>
+                  <td>[[${YesNo5}]]</td>
+              </tr>
+              <!-- Row 6 -->
+              <tr>
+                  <td>6</td>
+                  <td class="question">Do you have Zero Liquid Discharge Certificate (Compulsory)</td>
+                  <td>[[${YesNo6}]]</td>
+              </tr>
+              <!-- Row 7 -->
+              <tr>
+                  <td>7</td>
+                  <td class="question">Do you Conduct study of production process for calculating GHG (Green House Gases)
+                      emissions / carbon foot print</td>
+                  <td>[[${YesNo7}]]</td>
+              </tr>
+              <!-- Row 8 -->
+              <tr>
+                  <td>8</td>
+                  <td class="question">Do you have an emergency planIf yes, how many mock drills were conducted during
+                      last 3 years</td>
+                  <td>[[${YesNo8}]]</td>
+              </tr>
+              <!-- Row 9 -->
+              <tr>
+                  <td>9</td>
+                  <td class="question">Do you conduct study of HSE Risks and Opportunities related to your operations</td>
+                  <td>[[${YesNo9}]]</td>
+              </tr>
+              <!-- Row 10 -->
+              <tr>
+                  <td>10</td>
+                  <td class="question">Did any accident(s) occurred in your operations during last five years</td>
+                  <td>[[${YesNo10}]]</td>
+              </tr>
+              <!-- Row 11 -->
+              <tr>
+                  <td>11</td>
+                  <td class="question">Have you received any notice(s) from Government Authorities or other interested
+                      parties during last 5 years</td>
+                  <td>[[${YesNo11}]]</td>
+              </tr>
+              <!-- Row 12 -->
+              <tr>
+                  <td>12</td>
+                  <td class="question">Separate policy on Quality, Health, Safety  Environment</td>
+                  <td>[[${YesNo12}]]</td>
+              </tr>
+          </tbody>
+      </table>
+      <hr></hr>
+  </div>
+  
+  <h3>NATURE OF BUSINESS</h3>
+
+     <table id="GROUPTable">
+      <tr>
+        <td><b>Operation: </b>[[${Operation}]]</td>
+        <td><b>GPS Available: </b>[[${"Yes/No"}]]</td>
+      </tr>
+     </table>
+
+     <br></br>
+     <br></br>
+  <h3>ARBITRATION/LITIGATION/CLAIMS/DISPUTES (<i>TRANSPORT</i>)</h3>
+
+     <table id="GROUPTable">
+      <tr>
+        <th>SerialNo</th>
+        <th>Description</th>
+        <th>Year</th>
+        <th>Client</th>
+        <th>Amount</th>
+    </tr>
+      <tr>
+        <td style="vertical-align: top;">[[${SerialNo}]]</td>
+              <td style="vertical-align: top;">[[${Description}]]</td>
+              <td style="vertical-align: top;">[[${Year}]]</td>
+              <td style="vertical-align: top;">[[${Client}]]</td>
+              <td style="vertical-align: top;">[[${Amount}]]</td>
+      </tr>
+     </table>
+
+     
+
+     <h3>Declaration</h3>
+     <div class="declaration">
+  
+         <table class="DeclarationTable1">
+             <tr>
+                 <th style="text-align: left;"><h4>Declaration</h4></th>
+             </tr>
+         </table>
+  
+         <table class="DeclarationTable" style=" border: 1px solid black; margin-top: 1%;">
+             <tr>
+                 <td>I/We hereby submit the requested information about our company, its financial status and our experience for
+                     your appraisal.</td>
+             </tr>
+             <tr>
+                 <td>
+                     I/We, declare that I/We are authorized to accept, on behalf of the entity and that the information provided
+                         is true and correct.
+                 </td>
+             </tr>
+             <tr >
+               <td>In the event, information provided above found to be incorrect/false, I/We will take responsibility and
+                         accountability for any cost liabilities or consequential damages arising out of this.</td>
+           </tr>
+           <tr>
+             <td>
+                 I/We authorize and accept that Trent Limited. may verify such statements and other information in this
+                         questionnaire and further agree to furnish any additional information that may be required.
+             </td>
+         </tr>
+         </table>
+         <br></br>
+         <input type="checkbox" id="agree-to-declaration" name="agree-to-declaration" checked="checked" disabled="disabled"></input>
+             <label for="agree-to-declaration">I have read this and agree to the Declaration.</label>
+             <br></br>
+             <div>
+                 <table class="DeclarationTable2" style="width: 100%;">
+                     <tr>
+                         <th style="white-space: nowrap; padding-left: 0px; vertical-align: top; text-align: right;">Declaration Date:</th>
+                         <td style="width: 50%;vertical-align: top;">[[${DeclarationDate}]]</td>
+                         <th style="white-space: nowrap; text-align: right;">Declaration Time:</th>
+                         <td style="width: 50%;vertical-align: top;">[[${DeclarationTime}]]</td>
+  
+                     </tr>
+                     <tr>
+                         <th style="white-space: nowrap; text-align: right;" class="label">Declaration Name:</th>
+                         <td style="width: 50%;vertical-align: top;">[[${DeclarationName}]]</td>
+                         <th style="white-space: nowrap; text-align: right;">Designation:</th>
+                         <td style="width: 50%;vertical-align: top;">[[${Designation}]]</td>
+                     </tr>
+                 </table>
+             </div>
+     </div>
+    <hr></hr>
+
 </body>
 </html>
